@@ -7,11 +7,17 @@ public class PackageEntity {
 	
 	 private String name;
 	    private List<ClassEntity> classes;
+	    private List<InterfaceEntity> interfaces;
+	    private List<EnumEntity> enums;
+	    private List<AnnotationEntity> annotations;
 
 
 	public PackageEntity(String name) {
 		this.name = name;
         this.classes = new Vector<>();
+        this.interfaces = new Vector<>();
+        this.enums = new Vector<>();
+        this.annotations = new Vector<>();
 	}
 	
 	public String getName() {
@@ -24,6 +30,31 @@ public class PackageEntity {
 	
 	 public void addClass(ClassEntity cls) {
 	        classes.add(cls);
-	    }
+	}
+	 
+	 public List<AnnotationEntity> getAnnotations() {
+		return annotations;
+	}
+	 public void addAnnotation(AnnotationEntity annot) {
+		annotations.add(annot);
+
+	}
+	 
+	 public List<EnumEntity> getEnums() {
+		return enums;
+	}
+	 
+	 public void addEnum(EnumEntity enumEntity) {
+		enums.add(enumEntity);
+
+	}
+	 public List<InterfaceEntity> getInterfaces() {
+		return interfaces;
+	}
+	 
+	 public void addInterface(InterfaceEntity inter) {
+		interfaces.add(inter);
+
+	}
 
 }

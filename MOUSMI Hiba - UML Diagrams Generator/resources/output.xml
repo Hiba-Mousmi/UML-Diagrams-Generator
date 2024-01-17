@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project>
+    <Package name="org"/>
+    <Package name="org.mql"/>
+    <Package name="org.mql.java"/>
+    <Package name="org.mql.java.actions">
+        <Class name="org.mql.java.actions.EditAction">
+            <Methods>
+                <Method accessModifier="public" name="paste" returnType="String"/>
+                <Method accessModifier="public" name="cut" returnType="String"/>
+                <Method accessModifier="public" name="copy" returnType="String"/>
+            </Methods>
+        </Class>
+        <Class name="org.mql.java.actions.FileAction">
+            <Methods>
+                <Method accessModifier="public" name="saveAs" returnType="String"/>
+                <Method accessModifier="public" name="exit" returnType="String"/>
+                <Method accessModifier="public" name="save" returnType="String"/>
+                <Method accessModifier="public" name="open" returnType="String"/>
+                <Method accessModifier="public" name="newFile" returnType="String"/>
+            </Methods>
+        </Class>
+    </Package>
+    <Package name="org.mql.java.annotations">
+        <Annotation name="Action">
+            <Target>
+                <Type>METHOD</Type>
+            </Target>
+            <Methods>
+                <Method name="icon" type="java.lang.String"/>
+                <Method name="name" type="java.lang.String"/>
+                <Method defaultValue="0" name="key" type="int"/>
+            </Methods>
+        </Annotation>
+        <Annotation name="Controller">
+            <Target>
+                <Type>TYPE</Type>
+            </Target>
+            <Methods>
+                <Method name="value" type="java.lang.String"/>
+            </Methods>
+        </Annotation>
+        <Annotation name="Form">
+            <Target>
+                <Type>TYPE</Type>
+            </Target>
+            <Methods>
+                <Method defaultValue="0" name="labelSize" type="int"/>
+                <Method name="title" type="java.lang.String"/>
+            </Methods>
+        </Annotation>
+        <Annotation name="TextField">
+            <Target>
+                <Type>FIELD</Type>
+            </Target>
+            <Methods>
+                <Method name="size" type="int"/>
+                <Method name="label" type="java.lang.String"/>
+            </Methods>
+        </Annotation>
+    </Package>
+    <Package name="org.mql.java.enumerations"/>
+    <Package name="org.mql.java.models">
+        <Class name="org.mql.java.models.Author">
+            <Attributes>
+                <Attribute accessModifier="private" name="id" type="int"/>
+                <Attribute accessModifier="private" name="name" type="java.lang.String"/>
+                <Attribute accessModifier="private" name="yearBorn" type="int"/>
+                <Attribute accessModifier="private" name="technology" type="java.lang.String"/>
+            </Attributes>
+            <Methods>
+                <Method accessModifier="public" name="getYearBorn" returnType="int"/>
+                <Method accessModifier="public" name="setYearBorn" returnType="void">
+                    <Parameters>
+                        <Parameter type="int"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="getTechnology" returnType="String"/>
+                <Method accessModifier="public" name="setTechnology" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="setId" returnType="void">
+                    <Parameters>
+                        <Parameter type="int"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="getName" returnType="String"/>
+                <Method accessModifier="public" name="toString" returnType="String"/>
+                <Method accessModifier="public" name="setName" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="getId" returnType="int"/>
+            </Methods>
+        </Class>
+        <Class name="org.mql.java.models.Document">
+            <Attributes>
+                <Attribute accessModifier="private" name="id" type="int"/>
+                <Attribute accessModifier="private" name="title" type="java.lang.String"/>
+                <Attribute accessModifier="private" name="yearPublished" type="int"/>
+                <Attribute accessModifier="private" name="publisher" type="java.lang.String"/>
+            </Attributes>
+        </Class>
+    </Package>
+    <Package name="org.mql.java.reflection">
+        <Class name="org.mql.java.reflection.Examples">
+            <Methods>
+                <Method accessModifier="" name="exp07" returnType="void"/>
+                <Method accessModifier="" name="exp01" returnType="void"/>
+                <Method accessModifier="" name="exp02" returnType="void"/>
+                <Method accessModifier="" name="exp05" returnType="void"/>
+                <Method accessModifier="" name="exp06" returnType="void"/>
+                <Method accessModifier="" name="exp03" returnType="void"/>
+                <Method accessModifier="" name="exp04" returnType="void"/>
+                <Method accessModifier="public static" name="main" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String[]"/>
+                    </Parameters>
+                </Method>
+            </Methods>
+        </Class>
+        <Class name="org.mql.java.reflection.FormGenerator">
+            <Methods>
+                <Method accessModifier="public static" name="generate" returnType="Form">
+                    <Parameters>
+                        <Parameter type="java.lang.Object"/>
+                    </Parameters>
+                </Method>
+            </Methods>
+        </Class>
+        <Class name="org.mql.java.reflection.PackageExplorer">
+            <Methods>
+                <Method accessModifier="public static" name="scanWithClassLoader" returnType="String[]">
+                    <Parameters>
+                        <Parameter type="java.lang.String"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public static" name="scan" returnType="String[]">
+                    <Parameters>
+                        <Parameter type="java.lang.String"/>
+                    </Parameters>
+                </Method>
+            </Methods>
+        </Class>
+    </Package>
+    <Package name="org.mql.java.ui">
+        <Class name="org.mql.java.ui.Form">
+            <Attributes>
+                <Attribute accessModifier="private static final" name="serialVersionUID" type="long"/>
+                <Attribute accessModifier="private" name="labelSize" type="int"/>
+                <Attribute accessModifier="private" name="container" type="javax.swing.JPanel"/>
+            </Attributes>
+            <Methods>
+                <Method accessModifier="public" name="add" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String"/>
+                        <Parameter type="int"/>
+                    </Parameters>
+                </Method>
+            </Methods>
+            <Relations>
+                <Relation relationType="EXTEND" targetClass="javax.swing.JPanel"/>
+            </Relations>
+        </Class>
+        <Class name="org.mql.java.ui.LabeledTextField">
+            <Attributes>
+                <Attribute accessModifier="private static final" name="serialVersionUID" type="long"/>
+            </Attributes>
+            <Relations>
+                <Relation relationType="EXTEND" targetClass="javax.swing.JPanel"/>
+            </Relations>
+        </Class>
+        <Class name="org.mql.java.ui.Menu">
+            <Attributes>
+                <Attribute accessModifier="private static final" name="serialVersionUID" type="long"/>
+                <Attribute accessModifier="private" name="iconsPath" type="java.lang.String"/>
+                <Attribute accessModifier="private" name="type" type="java.lang.String"/>
+            </Attributes>
+            <Methods>
+                <Method accessModifier="public" name="addScannedByPackageExplorer" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String[]"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="add" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.Object"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="add" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String[]"/>
+                    </Parameters>
+                </Method>
+            </Methods>
+            <Relations>
+                <Relation relationType="EXTEND" targetClass="javax.swing.JMenuBar"/>
+                <Relation relationType="INNER_CLASS" targetClass="org.mql.java.ui.Menu$ItemListener"/>
+            </Relations>
+        </Class>
+    </Package>
+</Project>
