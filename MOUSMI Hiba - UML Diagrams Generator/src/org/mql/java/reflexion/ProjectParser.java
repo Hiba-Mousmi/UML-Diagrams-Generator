@@ -43,6 +43,7 @@ public class ProjectParser {
 	        if (files != null) {
 	            for (File file : files) {
 	                if (file.isDirectory()) {
+	                	
 	                    String packageName = (parentPackage.isEmpty()) ? file.getName() : parentPackage + "." + file.getName();
 	                    PackageEntity pkg = new PackageEntity(packageName);
 	                    
@@ -64,16 +65,11 @@ public class ProjectParser {
         if (files != null) {
             for (File file : files) {
                 if (file.isFile() && file.getName().endsWith(".java")) {  
-                	
-                
-                   // String className = file.getName().replace(".java", "");
-                    //ClassEntity cls = new ClassEntity(className);
-                    
-                  
+              
                 	String relativePath = file.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1);
                 	String className = relativePath.substring(0, relativePath.lastIndexOf(".java")).replace(File.separator, ".");
 
-                    ClassEntity cls = new ClassEntity(className);
+                   // ClassEntity cls = new ClassEntity(className);
                     
 
                     try {
@@ -92,9 +88,4 @@ public class ProjectParser {
             }
         }
     }
-    
-    public void persistToXml(String outputPath) {
-        XmlPersistence.persistToXml(packages, outputPath);
-    }
-
 }
