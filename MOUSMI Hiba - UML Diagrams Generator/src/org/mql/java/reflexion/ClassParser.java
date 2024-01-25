@@ -3,11 +3,9 @@ package org.mql.java.reflexion;
 import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.Parameter;
 import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -98,7 +96,7 @@ public class ClassParser {
 		Class<?> superCls = parsed.getSuperclass();
 		if (superCls != null && superCls != Object.class) {
 			
-			//classEntity.getRelations().add(new RelationEntity(RelationType.EXTEND, superCls.getName()));
+			classEntity.getRelations().add(new RelationEntity(RelationType.EXTEND, superCls.getName()));
 		}
 			 
 

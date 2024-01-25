@@ -6,18 +6,18 @@
     <Package name="org.mql.java.actions">
         <Class name="EditAction">
             <Methods>
-                <Method accessModifier="public" name="copy" returnType="String"/>
                 <Method accessModifier="public" name="cut" returnType="String"/>
                 <Method accessModifier="public" name="paste" returnType="String"/>
+                <Method accessModifier="public" name="copy" returnType="String"/>
             </Methods>
         </Class>
         <Class name="FileAction">
             <Methods>
+                <Method accessModifier="public" name="saveAs" returnType="String"/>
                 <Method accessModifier="public" name="exit" returnType="String"/>
                 <Method accessModifier="public" name="save" returnType="String"/>
                 <Method accessModifier="public" name="open" returnType="String"/>
                 <Method accessModifier="public" name="newFile" returnType="String"/>
-                <Method accessModifier="public" name="saveAs" returnType="String"/>
             </Methods>
         </Class>
     </Package>
@@ -27,9 +27,9 @@
                 <Type>METHOD</Type>
             </Target>
             <Methods>
+                <Method name="icon" type="java.lang.String"/>
                 <Method name="name" type="java.lang.String"/>
                 <Method defaultValue="0" name="key" type="int"/>
-                <Method name="icon" type="java.lang.String"/>
             </Methods>
         </Annotation>
         <Annotation name="Controller">
@@ -69,20 +69,12 @@
                 <Attribute accessModifier="private" name="technology" type="java.lang.String"/>
             </Attributes>
             <Methods>
-                <Method accessModifier="public" name="getName" returnType="String"/>
-                <Method accessModifier="public" name="toString" returnType="String"/>
-                <Method accessModifier="public" name="setName" returnType="void">
-                    <Parameters>
-                        <Parameter type="java.lang.String"/>
-                    </Parameters>
-                </Method>
-                <Method accessModifier="public" name="getId" returnType="int"/>
-                <Method accessModifier="public" name="getYearBorn" returnType="int"/>
                 <Method accessModifier="public" name="setYearBorn" returnType="void">
                     <Parameters>
                         <Parameter type="int"/>
                     </Parameters>
                 </Method>
+                <Method accessModifier="public" name="getYearBorn" returnType="int"/>
                 <Method accessModifier="public" name="getTechnology" returnType="String"/>
                 <Method accessModifier="public" name="setTechnology" returnType="void">
                     <Parameters>
@@ -94,6 +86,14 @@
                         <Parameter type="int"/>
                     </Parameters>
                 </Method>
+                <Method accessModifier="public" name="getName" returnType="String"/>
+                <Method accessModifier="public" name="toString" returnType="String"/>
+                <Method accessModifier="public" name="setName" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String"/>
+                    </Parameters>
+                </Method>
+                <Method accessModifier="public" name="getId" returnType="int"/>
             </Methods>
         </Class>
         <Class name="Document">
@@ -108,18 +108,18 @@
     <Package name="org.mql.java.reflection">
         <Class name="Examples">
             <Methods>
+                <Method accessModifier="" name="exp06" returnType="void"/>
+                <Method accessModifier="" name="exp04" returnType="void"/>
+                <Method accessModifier="" name="exp05" returnType="void"/>
+                <Method accessModifier="" name="exp07" returnType="void"/>
+                <Method accessModifier="" name="exp01" returnType="void"/>
+                <Method accessModifier="" name="exp02" returnType="void"/>
+                <Method accessModifier="" name="exp03" returnType="void"/>
                 <Method accessModifier="public static" name="main" returnType="void">
                     <Parameters>
                         <Parameter type="java.lang.String[]"/>
                     </Parameters>
                 </Method>
-                <Method accessModifier="" name="exp03" returnType="void"/>
-                <Method accessModifier="" name="exp06" returnType="void"/>
-                <Method accessModifier="" name="exp01" returnType="void"/>
-                <Method accessModifier="" name="exp05" returnType="void"/>
-                <Method accessModifier="" name="exp07" returnType="void"/>
-                <Method accessModifier="" name="exp04" returnType="void"/>
-                <Method accessModifier="" name="exp02" returnType="void"/>
             </Methods>
         </Class>
         <Class name="FormGenerator">
@@ -133,12 +133,12 @@
         </Class>
         <Class name="PackageExplorer">
             <Methods>
-                <Method accessModifier="public static" name="scan" returnType="String[]">
+                <Method accessModifier="public static" name="scanWithClassLoader" returnType="String[]">
                     <Parameters>
                         <Parameter type="java.lang.String"/>
                     </Parameters>
                 </Method>
-                <Method accessModifier="public static" name="scanWithClassLoader" returnType="String[]">
+                <Method accessModifier="public static" name="scan" returnType="String[]">
                     <Parameters>
                         <Parameter type="java.lang.String"/>
                     </Parameters>
@@ -161,11 +161,17 @@
                     </Parameters>
                 </Method>
             </Methods>
+            <Relations>
+                <Relation relationType="EXTEND" targetClass="javax.swing.JPanel"/>
+            </Relations>
         </Class>
         <Class name="LabeledTextField">
             <Attributes>
                 <Attribute accessModifier="private static final" name="serialVersionUID" type="long"/>
             </Attributes>
+            <Relations>
+                <Relation relationType="EXTEND" targetClass="javax.swing.JPanel"/>
+            </Relations>
         </Class>
         <Class name="Menu">
             <Attributes>
@@ -174,6 +180,11 @@
                 <Attribute accessModifier="private" name="type" type="java.lang.String"/>
             </Attributes>
             <Methods>
+                <Method accessModifier="public" name="addScannedByPackageExplorer" returnType="void">
+                    <Parameters>
+                        <Parameter type="java.lang.String[]"/>
+                    </Parameters>
+                </Method>
                 <Method accessModifier="public" name="add" returnType="void">
                     <Parameters>
                         <Parameter type="java.lang.Object"/>
@@ -184,13 +195,9 @@
                         <Parameter type="java.lang.String[]"/>
                     </Parameters>
                 </Method>
-                <Method accessModifier="public" name="addScannedByPackageExplorer" returnType="void">
-                    <Parameters>
-                        <Parameter type="java.lang.String[]"/>
-                    </Parameters>
-                </Method>
             </Methods>
             <Relations>
+                <Relation relationType="EXTEND" targetClass="javax.swing.JMenuBar"/>
                 <Relation relationType="INNER_CLASS" targetClass="org.mql.java.ui.Menu$ItemListener"/>
             </Relations>
         </Class>

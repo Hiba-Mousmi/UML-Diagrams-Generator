@@ -1,18 +1,9 @@
 package org.mql.java.reflexion;
 
 import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
 
-import org.mql.java.dom.XmlPersistence;
-import org.mql.java.models.ClassEntity;
 import org.mql.java.models.PackageEntity;
 
 public class ProjectParser {
@@ -76,7 +67,7 @@ public class ProjectParser {
                   	    
                        String classQualifiedName = pkg.getName() + "." + className;
                        
-                        PackageEntity pkgeParsed = classParser.parse(classQualifiedName, pkg);
+                       classParser.parse(classQualifiedName, pkg);
                        
                         
                     } catch (ClassNotFoundException e) {
